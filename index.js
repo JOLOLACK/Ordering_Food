@@ -9,6 +9,10 @@ function getMenuElements(){
 
 
 document.addEventListener('click',function(e){
+  if(e.target.id === "CheckoutBtn"){
+    document.getElementById('modal').classList.toggle('hiddenModle')
+    }
+
     if(e.target.dataset.pizza){
         renderOrder(getTargetTweetObj(e.target.dataset.pizza))
     }
@@ -20,9 +24,6 @@ document.addEventListener('click',function(e){
     }
     else if(e.target.id){
         deleteEl(e.target.id)
-    }
-    if(e.target.id === "CheckoutBtn"){
-        document.getElementById('modal').classList.toggle('hiddenModle')
     }
     
 })
